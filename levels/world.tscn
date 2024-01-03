@@ -267,6 +267,7 @@ position = Vector2(0, -171)
 motion_mirroring = Vector2(432, 0)
 
 [node name="texture" type="Sprite2D" parent="bg/5"]
+texture_repeat = 2
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("4_brd3n")
 centered = false
@@ -276,7 +277,7 @@ position = Vector2(0, -171)
 motion_scale = Vector2(0.3, 1)
 motion_mirroring = Vector2(432, 0)
 
-[node name="texture" type="Sprite2D" parent="bg/4"]
+[node name="back_cloud" type="Sprite2D" parent="bg/4"]
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("5_e3ix8")
 centered = false
