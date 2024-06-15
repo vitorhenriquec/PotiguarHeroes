@@ -66,14 +66,13 @@ collision_mask = 2
 script = ExtResource("1_7jdbx")
 
 [node name="collision" type="CollisionShape2D" parent="."]
-visible = false
 shape = SubResource("CapsuleShape2D_s72pu")
 
 [node name="camera" type="Camera2D" parent="."]
-visible = false
 limit_left = 0
 limit_smoothed = true
 position_smoothing_enabled = true
+position_smoothing_speed = 10.0
 drag_horizontal_enabled = true
 drag_left_margin = 0.5
 drag_right_margin = 0.5
@@ -85,6 +84,6 @@ scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_kutgv")
 animation = &"run"
 autoplay = "idle"
-frame_progress = 0.266731
+frame_progress = 0.235639
 
 [node name="animator" type="AnimationPlayer" parent="."]
