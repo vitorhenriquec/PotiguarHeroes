@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cakfshidqppvy" path="res://assets/Seasonal Tilesets/3 - Tropics/Tropics_entities (16 x 16).png" id="3_gyirg"]
 [ext_resource type="Texture2D" uid="uid://d074an7q8vxos" path="res://assets/Seasonal Tilesets/5 - Misc. universal tiles/Flowers (16 x 16).png" id="4_x70pt"]
 [ext_resource type="Texture2D" uid="uid://b8lytsoymt13y" path="res://assets/Seasonal Tilesets/1 - Grassland/Extra_plants (16 x 16).png" id="5_3b3mq"]
-[ext_resource type="PackedScene" uid="uid://cvtrpusna77k1" path="res://prefabs/collectable.tscn" id="6_kyhdw"]
+[ext_resource type="PackedScene" uid="uid://b4u5o6a0n2ncr" path="res://prefabs/diary.tscn" id="6_03mjp"]
 [ext_resource type="PackedScene" uid="uid://jsdkdd127vly" path="res://actors/playernisia.tscn" id="6_yckyq"]
 [ext_resource type="Texture2D" uid="uid://q1dnhos5lvm8" path="res://assets/Seasonal Tilesets/3 - Tropics/Background parts/5 - Sky_color.png" id="7_xn1i5"]
 [ext_resource type="Texture2D" uid="uid://dt1oloqwucpla" path="res://assets/Seasonal Tilesets/3 - Tropics/Background parts/4 - Background_clouds.png" id="8_op4xe"]
@@ -451,11 +451,13 @@ layer_0/tile_data = PackedInt32Array(458746, 262144, 1, 458747, 262144, 1, 45874
 layer_1/name = "trees"
 layer_1/tile_data = PackedInt32Array()
 
-[node name="collectable" parent="." instance=ExtResource("6_kyhdw")]
-position = Vector2(32, -224)
+[node name="collectables" type="Node2D" parent="."]
 
-[node name="collectable2" parent="." instance=ExtResource("6_kyhdw")]
-position = Vector2(409, -191)
+[node name="diary" parent="collectables" instance=ExtResource("6_03mjp")]
+position = Vector2(32, -192)
+
+[node name="diary2" parent="collectables" instance=ExtResource("6_03mjp")]
+position = Vector2(408, -160)
 
 [node name="moving_plataform" parent="." instance=ExtResource("13_8c1va")]
 position = Vector2(144, -100)
