@@ -1,0 +1,90 @@
+[gd_scene load_steps=13 format=3 uid="uid://jsdkdd127vly"]
+
+[ext_resource type="Script" path="res://scripts/playernisia.gd" id="1_7jdbx"]
+[ext_resource type="Texture2D" uid="uid://coleyb2tug5l" path="res://assets/players/nisia/nisial1.png" id="2_ie0m2"]
+[ext_resource type="Texture2D" uid="uid://vohxsutnolqe" path="res://assets/players/nisia/nisia2.png" id="3_mvf6j"]
+[ext_resource type="Texture2D" uid="uid://orj5hbycxsny" path="res://assets/players/nisia/nisial3.png" id="4_dv03v"]
+[ext_resource type="Texture2D" uid="uid://cuswpimeapog6" path="res://assets/players/nisia/nisia4.png" id="5_1vrnf"]
+[ext_resource type="Texture2D" uid="uid://tgqulygo4gpy" path="res://assets/players/nisia/nisia9.png" id="6_1738h"]
+[ext_resource type="Texture2D" uid="uid://ke034y470r6f" path="res://assets/players/nisia/nisia5.png" id="7_88a0g"]
+[ext_resource type="Texture2D" uid="uid://dr2ycb354bojd" path="res://assets/players/nisia/nisia6.png" id="8_npkrv"]
+[ext_resource type="Texture2D" uid="uid://bgxc1xgfbph6c" path="res://assets/players/nisia/nisial8.png" id="9_drokd"]
+[ext_resource type="Texture2D" uid="uid://bdhri8r24h3o5" path="res://assets/players/nisia/nisia7.png" id="10_8rbiy"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s72pu"]
+radius = 24.0
+height = 64.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kutgv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ie0m2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_mvf6j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_dv03v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_1vrnf")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_1738h")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_88a0g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_npkrv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_8rbiy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_drokd")
+}],
+"loop": true,
+"name": &"run",
+"speed": 8.0
+}]
+
+[node name="player" type="CharacterBody2D"]
+position = Vector2(0, -40)
+collision_mask = 2
+script = ExtResource("1_7jdbx")
+
+[node name="collision" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CapsuleShape2D_s72pu")
+
+[node name="camera" type="Camera2D" parent="."]
+visible = false
+limit_left = 0
+limit_smoothed = true
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_left_margin = 0.5
+drag_right_margin = 0.5
+editor_draw_limits = true
+
+[node name="anim" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_kutgv")
+animation = &"run"
+autoplay = "idle"
+frame_progress = 0.266731
+
+[node name="animator" type="AnimationPlayer" parent="."]
