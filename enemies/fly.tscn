@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://dcq5s0utyiosb"]
+
+[ext_resource type="Script" path="res://scripts/fly.gd" id="1_0tihc"]
+[ext_resource type="Texture2D" uid="uid://y70e7b2aminx" path="res://assets/enemies/Fly1.png" id="1_4ye20"]
+[ext_resource type="Texture2D" uid="uid://cf5r4ipld13nk" path="res://assets/enemies/Fly2.png" id="2_rfjn1"]
+[ext_resource type="Texture2D" uid="uid://gbfot7ovmvtl" path="res://assets/enemies/Fly3.png" id="3_264h3"]
+[ext_resource type="Texture2D" uid="uid://dsx2cjta4jicv" path="res://assets/enemies/Fly4.png" id="4_7ckgj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j5e8k"]
+radius = 16.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q1dft"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_4ye20")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_rfjn1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_264h3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7ckgj")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[node name="fly" type="Area2D"]
+position = Vector2(0, -16)
+script = ExtResource("1_0tihc")
+
+[node name="collision" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_j5e8k")
+
+[node name="texture" type="AnimatedSprite2D" parent="."]
+visibility_layer = 2
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_q1dft")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.583663
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

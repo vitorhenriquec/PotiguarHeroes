@@ -1,0 +1,73 @@
+[gd_scene load_steps=6 format=3 uid="uid://2yefc5e3t6y7"]
+
+[ext_resource type="Texture2D" uid="uid://bw2hwv1t7u0bo" path="res://assets/enemies/ant.png" id="1_6t6ic"]
+[ext_resource type="Script" path="res://scripts/ant.gd" id="1_y43gc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m7n38"]
+radius = 32.0
+
+[sub_resource type="Animation" id="Animation_wphb4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("texture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_6t6ic")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("texture:centered")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("texture:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t53j1"]
+_data = {
+"RESET": SubResource("Animation_wphb4")
+}
+
+[node name="ant" type="CharacterBody2D"]
+position = Vector2(-8, -16)
+script = ExtResource("1_y43gc")
+
+[node name="collision" type="CollisionShape2D" parent="."]
+position = Vector2(8, -16)
+shape = SubResource("CircleShape2D_m7n38")
+one_way_collision_margin = 40.8
+
+[node name="anim" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_t53j1")
+}
+speed_scale = 0.5
+
+[node name="texture" type="Sprite2D" parent="."]
+visibility_layer = 2
+position = Vector2(8, -8)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_6t6ic")
+hframes = 5
