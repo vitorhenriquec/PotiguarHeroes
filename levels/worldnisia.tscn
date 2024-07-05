@@ -1,6 +1,7 @@
-[gd_scene load_steps=21 format=3 uid="uid://5mn5b8v85syw"]
+[gd_scene load_steps=22 format=3 uid="uid://5mn5b8v85syw"]
 
 [ext_resource type="Texture2D" uid="uid://cfbe4idnrs780" path="res://assets/tilesets/2 - Autumn Forest/Terrain (16 x 16).png" id="1_ac1ub"]
+[ext_resource type="Script" path="res://levels/worldnisia.gd" id="1_dk7b3"]
 [ext_resource type="Texture2D" uid="uid://2hay385sjyn3" path="res://assets/tilesets/3 - Tropics/Terrain (16 x 16).png" id="1_tcidt"]
 [ext_resource type="Texture2D" uid="uid://dwmyofi5xbbmy" path="res://assets/tilesets/3 - Tropics/cactus.png" id="3_34wil"]
 [ext_resource type="Texture2D" uid="uid://cakfshidqppvy" path="res://assets/tilesets/3 - Tropics/Tropics_entities (16 x 16).png" id="3_gyirg"]
@@ -423,8 +424,9 @@ sources/8 = SubResource("TileSetAtlasSource_4kp7s")
 shader = ExtResource("9_38k24")
 shader_parameter/move_speed = 0.05
 
-[node name="World" type="Node2D"]
+[node name="WorldNisia" type="Node2D"]
 position = Vector2(104, 96)
+script = ExtResource("1_dk7b3")
 
 [node name="level" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_7budc")
