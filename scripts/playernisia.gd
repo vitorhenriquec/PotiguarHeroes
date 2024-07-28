@@ -28,6 +28,7 @@ func _physics_process(delta):
 	
 	if direction:
 		velocity.x = direction * SPEED
+		animation.scale.x = direction
 		if !is_jumping:
 			animation.play("run")
 	elif is_jumping:

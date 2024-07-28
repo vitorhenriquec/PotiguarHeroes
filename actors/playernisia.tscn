@@ -126,6 +126,6 @@ scale = Vector2(1.15625, 1)
 sprite_frames = SubResource("SpriteFrames_kutgv")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.0236203
+frame_progress = 0.626304
 
 [node name="animator" type="AnimationPlayer" parent="."]
