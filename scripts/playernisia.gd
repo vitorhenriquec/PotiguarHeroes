@@ -25,9 +25,9 @@ func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_axis("ui_left", "ui_right")
+	
 	if direction:
 		velocity.x = direction * SPEED
-		animation.scale.x = direction * 0.6
 		if !is_jumping:
 			animation.play("run")
 	elif is_jumping:

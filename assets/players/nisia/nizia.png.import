@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://orj5hbycxsny"
-path="res://.godot/imported/nisial3.png-483731e2f527f011ae1acc22fa4726f7.ctex"
+uid="uid://crfxghblgcw2a"
+path="res://.godot/imported/nizia.png-54fe0f54a26d8edaad8e0ca88e71c918.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/players/nisia/nisial3.png"
-dest_files=["res://.godot/imported/nisial3.png-483731e2f527f011ae1acc22fa4726f7.ctex"]
+source_file="res://assets/players/nisia/nizia.png"
+dest_files=["res://.godot/imported/nizia.png-54fe0f54a26d8edaad8e0ca88e71c918.ctex"]
 
 [params]
 
