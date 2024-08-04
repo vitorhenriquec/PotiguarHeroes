@@ -38,3 +38,16 @@ func _process(delta):
 		
 	if PlayerState.get_score() == 0:
 		actual_score = 0
+
+
+func _on_flag_body_entered(body):
+	var can_proceed = PlayerState.get_score() == 10
+	
+	if body.name == "player" and can_proceed:
+		#get_tree().change_scene_to_file("res://Scenes/MainMenu.tscn")
+		#queue_free()
+		pass
+	elif body.name == "player" and not can_proceed:
+		$hud/control/message_container/score_message.text = "Colete todos os items!"
+		await get_tree().create_timer(2).timeout
+		$hud/control/message_container/score_message.text = ""
