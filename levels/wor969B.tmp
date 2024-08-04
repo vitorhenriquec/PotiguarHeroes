@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://5mn5b8v85syw"]
+[gd_scene load_steps=24 format=3 uid="uid://5mn5b8v85syw"]
 
 [ext_resource type="Texture2D" uid="uid://cfbe4idnrs780" path="res://assets/tilesets/2 - Autumn Forest/Terrain (16 x 16).png" id="1_ac1ub"]
 [ext_resource type="Script" path="res://levels/worldnisia.gd" id="1_dk7b3"]
@@ -17,11 +17,6 @@
 [ext_resource type="PackedScene" uid="uid://qqnvwbv0cvyh" path="res://prefabs/moving_plataform.tscn" id="13_8c1va"]
 [ext_resource type="Texture2D" uid="uid://b3eonn3ds5dbf" path="res://assets/ui/ui_buttons_arrow_left_NORMAL.png" id="16_3gky0"]
 [ext_resource type="Texture2D" uid="uid://c4y03wytbjqrb" path="res://assets/ui/ui_buttons_arrow_left_PRESSED.png" id="17_rvuf2"]
-[ext_resource type="Texture2D" uid="uid://btfsjc8jubypf" path="res://assets/ui/ui_buttons_arrow_right_NORMAL.png" id="18_6or4e"]
-[ext_resource type="Texture2D" uid="uid://c2fcu2d2xb37a" path="res://assets/ui/ui_buttons_arrow_right_PRESSED.png" id="19_evxy5"]
-[ext_resource type="Texture2D" uid="uid://blrsrdulul7gn" path="res://assets/ui/ui_buttons_arrow_up_NORMAL.png" id="20_ge2x2"]
-[ext_resource type="Texture2D" uid="uid://c3mnh7hwvjr6k" path="res://assets/ui/ui_buttons_arrow_up_PRESSED.png" id="21_eg1r4"]
-[ext_resource type="FontFile" uid="uid://bv8k3ovc12l53" path="res://assets/ui/RevMiniPixel.ttf" id="22_m1nl6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5s7g7"]
 texture = ExtResource("1_tcidt")
@@ -533,6 +528,12 @@ move_horizontal = false
 [node name="player" parent="." instance=ExtResource("6_yckyq")]
 position = Vector2(0, 56)
 
+[node name="text" type="Label" parent="player"]
+offset_left = -88.0
+offset_top = -81.0
+offset_right = 106.0
+offset_bottom = -37.0
+
 [node name="BG" type="ParallaxBackground" parent="."]
 
 [node name="5" type="ParallaxLayer" parent="BG"]
@@ -599,83 +600,5 @@ editor_draw_limits = true
 [node name="controler" type="CanvasLayer" parent="."]
 
 [node name="ui_left" type="TouchScreenButton" parent="controler"]
-position = Vector2(9, 144)
 texture_normal = ExtResource("16_3gky0")
 texture_pressed = ExtResource("17_rvuf2")
-action = "ui_left"
-visibility_mode = 1
-
-[node name="ui_right" type="TouchScreenButton" parent="controler"]
-position = Vector2(47, 144)
-texture_normal = ExtResource("18_6or4e")
-texture_pressed = ExtResource("19_evxy5")
-action = "ui_right"
-visibility_mode = 1
-
-[node name="ui_up" type="TouchScreenButton" parent="controler"]
-position = Vector2(284, 144)
-texture_normal = ExtResource("20_ge2x2")
-texture_pressed = ExtResource("21_eg1r4")
-action = "ui_accept"
-visibility_mode = 1
-
-[node name="hud" type="CanvasLayer" parent="."]
-
-[node name="control" type="Control" parent="hud"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="container" type="MarginContainer" parent="hud/control"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 8
-theme_override_constants/margin_top = 8
-theme_override_constants/margin_right = 8
-theme_override_constants/margin_bottom = 8
-
-[node name="score_container" type="HBoxContainer" parent="hud/control/container"]
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-
-[node name="score_counter" type="Label" parent="hud/control/container/score_container"]
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("22_m1nl6")
-theme_override_font_sizes/font_size = 15
-text = "00"
-
-[node name="message_container" type="HBoxContainer" parent="hud/control"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -9.5
-offset_top = -5.5
-offset_right = 9.5
-offset_bottom = 5.5
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="score_message" type="Label" parent="hud/control/message_container"]
-layout_mode = 2
-size_flags_horizontal = 0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("22_m1nl6")
-theme_override_font_sizes/font_size = 15
-horizontal_alignment = 1
-vertical_alignment = 1

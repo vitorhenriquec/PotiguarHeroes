@@ -1,6 +1,6 @@
 extends Area2D
 
-
+var player_status = load("res://scripts/status.gd")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -16,4 +16,5 @@ func _on_body_entered(body):
 
 
 func _on_anim_animation_finished():
-	queue_free() # Replace with function body.
+	queue_free()
+	PlayerState.increment_score()

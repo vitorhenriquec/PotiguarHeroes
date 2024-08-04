@@ -3,10 +3,6 @@
 [ext_resource type="Script" path="res://scripts/playernisia.gd" id="1_7jdbx"]
 [ext_resource type="Texture2D" uid="uid://crfxghblgcw2a" path="res://assets/players/nisia/nizia.png" id="2_bltrs"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s72pu"]
-radius = 24.0
-height = 64.0
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_k7yvk"]
 atlas = ExtResource("2_bltrs")
 region = Rect2(0, 0, 64, 64)
@@ -102,23 +98,13 @@ animations = [{
 "speed": 8.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ckynl"]
+size = Vector2(25, 62)
+
 [node name="player" type="CharacterBody2D"]
 position = Vector2(0, -40)
-collision_mask = 2
+collision_mask = 6
 script = ExtResource("1_7jdbx")
-
-[node name="collision" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_s72pu")
-
-[node name="camera" type="Camera2D" parent="."]
-limit_left = 0
-limit_smoothed = true
-position_smoothing_enabled = true
-position_smoothing_speed = 10.0
-drag_horizontal_enabled = true
-drag_left_margin = 0.5
-drag_right_margin = 0.5
-editor_draw_limits = true
 
 [node name="anim" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -128,4 +114,10 @@ animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.626304
 
+[node name="collision" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, 0)
+shape = SubResource("RectangleShape2D_ckynl")
+
 [node name="animator" type="AnimationPlayer" parent="."]
+
+[node name="remote" type="RemoteTransform2D" parent="."]
