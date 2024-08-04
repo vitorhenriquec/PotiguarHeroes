@@ -1,39 +1,43 @@
 [gd_scene load_steps=14 format=3 uid="uid://cvtrpusna77k1"]
 
-[ext_resource type="Texture2D" uid="uid://bq5e1ydx1g0eh" path="res://assets/Mini FX, Items & UI/Common Pick-ups/Coin (16 x 16).png" id="1_co5sm"]
 [ext_resource type="Script" path="res://scripts/collectable.gd" id="1_vn3ea"]
-[ext_resource type="Texture2D" uid="uid://bj40mmjseonhj" path="res://assets/Mini FX, Items & UI/Effects/Yellow_Sparkle (16 x 16).png" id="2_ouqjt"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6i6yj"]
+load_path = "res://.godot/imported/Yellow_Sparkle (16 x 16).png-cf0a495133e3679e91cb612132dc5d7e.ctex"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3u7u1"]
-atlas = ExtResource("2_ouqjt")
+atlas = SubResource("CompressedTexture2D_6i6yj")
 region = Rect2(0, 0, 20, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_874no"]
-atlas = ExtResource("2_ouqjt")
+atlas = SubResource("CompressedTexture2D_6i6yj")
 region = Rect2(20, 0, 20, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6u4j8"]
-atlas = ExtResource("2_ouqjt")
+atlas = SubResource("CompressedTexture2D_6i6yj")
 region = Rect2(40, 0, 20, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ckkvd"]
-atlas = ExtResource("2_ouqjt")
+atlas = SubResource("CompressedTexture2D_6i6yj")
 region = Rect2(60, 0, 20, 16)
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jam64"]
+load_path = "res://.godot/imported/Coin (16 x 16).png-10f41330fa2e5ea3ce460556bf426eab.ctex"
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_2cy6b"]
-atlas = ExtResource("1_co5sm")
+atlas = SubResource("CompressedTexture2D_jam64")
 region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x0tt6"]
-atlas = ExtResource("1_co5sm")
+atlas = SubResource("CompressedTexture2D_jam64")
 region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7ek4t"]
-atlas = ExtResource("1_co5sm")
+atlas = SubResource("CompressedTexture2D_jam64")
 region = Rect2(32, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b38hd"]
-atlas = ExtResource("1_co5sm")
+atlas = SubResource("CompressedTexture2D_jam64")
 region = Rect2(48, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vvu3f"]
