@@ -120,3 +120,5 @@ shape = SubResource("RectangleShape2D_ckynl")
 [node name="animator" type="AnimationPlayer" parent="."]
 
 [node name="remote" type="RemoteTransform2D" parent="."]
+
+[node name="camera" type="Camera2D" parent="."]
