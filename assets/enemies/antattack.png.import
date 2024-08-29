@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ct5s20j0qea1a"
-path="res://.godot/imported/Standing (16 x 16).png-f95a991ff5774aa705c42266a28d2d95.ctex"
+uid="uid://bun5ws81puw5h"
+path="res://.godot/imported/antattack.png-7bd8b59bcec64c5c23cb89219320792b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/enemies/Standing (16 x 16).png"
-dest_files=["res://.godot/imported/Standing (16 x 16).png-f95a991ff5774aa705c42266a28d2d95.ctex"]
+source_file="res://assets/enemies/antattack.png"
+dest_files=["res://.godot/imported/antattack.png-7bd8b59bcec64c5c23cb89219320792b.ctex"]
 
 [params]
 
