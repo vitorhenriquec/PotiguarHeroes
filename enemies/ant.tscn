@@ -33,8 +33,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8uw7j"]
-radius = 8.91853
-height = 17.8371
+radius = 7.02889
+height = 14.995
 
 [node name="fly" type="Area2D" groups=["enemies"]]
 position = Vector2(0, -10)
@@ -55,7 +55,7 @@ frame_progress = 0.840828
 [node name="collision" type="CollisionShape2D" parent="."]
 light_mask = 4
 visibility_layer = 33
-position = Vector2(-0.992033, -3)
+position = Vector2(-3.96814, -3)
 rotation = 1.5708
 scale = Vector2(1.34551, 2.11705)
 shape = SubResource("CapsuleShape2D_8uw7j")
