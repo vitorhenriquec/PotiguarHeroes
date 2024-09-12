@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1dcrarfkflno"
-path="res://.godot/imported/ant.png-058c0678110cb7f5d6070e7eea8fd4e1.ctex"
+uid="uid://bykr4ybnj5bco"
+path="res://.godot/imported/isabel.png-5ec84729e296cd8c5124028ee2c22d1a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/enemies/ant.png"
-dest_files=["res://.godot/imported/ant.png-058c0678110cb7f5d6070e7eea8fd4e1.ctex"]
+source_file="res://assets/players/isabel/isabel.png"
+dest_files=["res://.godot/imported/isabel.png-5ec84729e296cd8c5124028ee2c22d1a.ctex"]
 
 [params]
 

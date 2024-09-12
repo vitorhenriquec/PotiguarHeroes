@@ -1,73 +1,64 @@
-[gd_scene load_steps=6 format=3 uid="uid://2yefc5e3t6y7"]
+[gd_scene load_steps=8 format=3 uid="uid://2yefc5e3t6y7"]
 
-[ext_resource type="Texture2D" uid="uid://bw2hwv1t7u0bo" path="res://assets/enemies/ant.png" id="1_6t6ic"]
-[ext_resource type="Script" path="res://scripts/ant.gd" id="1_y43gc"]
+[ext_resource type="Script" path="res://scripts/fly.gd" id="1_b14re"]
+[ext_resource type="Texture2D" uid="uid://bun5ws81puw5h" path="res://assets/enemies/antattack.png" id="2_kwati"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_m7n38"]
-radius = 32.0
+[sub_resource type="AtlasTexture" id="AtlasTexture_fpcun"]
+atlas = ExtResource("2_kwati")
+region = Rect2(0, 0, 170, 70)
 
-[sub_resource type="Animation" id="Animation_wphb4"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("texture:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("1_6t6ic")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("texture:centered")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("texture:frame")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
+[sub_resource type="AtlasTexture" id="AtlasTexture_018bo"]
+atlas = ExtResource("2_kwati")
+region = Rect2(170, 0, 170, 70)
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_t53j1"]
-_data = {
-"RESET": SubResource("Animation_wphb4")
-}
+[sub_resource type="AtlasTexture" id="AtlasTexture_c8a57"]
+atlas = ExtResource("2_kwati")
+region = Rect2(340, 0, 170, 70)
 
-[node name="ant" type="CharacterBody2D"]
-position = Vector2(-8, -16)
-script = ExtResource("1_y43gc")
+[sub_resource type="SpriteFrames" id="SpriteFrames_q1dft"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fpcun")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_018bo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c8a57")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8uw7j"]
+radius = 7.02889
+height = 14.995
+
+[node name="fly" type="Area2D" groups=["enemies"]]
+position = Vector2(0, -10)
+scale = Vector2(1.00803, 1)
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_b14re")
+
+[node name="texture" type="AnimatedSprite2D" parent="."]
+visibility_layer = 2
+position = Vector2(-2.9761, -2)
+scale = Vector2(0.186736, 0.285714)
+sprite_frames = SubResource("SpriteFrames_q1dft")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.840828
 
 [node name="collision" type="CollisionShape2D" parent="."]
-position = Vector2(8, -16)
-shape = SubResource("CircleShape2D_m7n38")
-one_way_collision_margin = 40.8
+light_mask = 4
+visibility_layer = 33
+position = Vector2(-3.96814, -3)
+rotation = 1.5708
+scale = Vector2(1.34551, 2.11705)
+shape = SubResource("CapsuleShape2D_8uw7j")
+one_way_collision_margin = 0.0
 
-[node name="anim" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_t53j1")
-}
-speed_scale = 0.5
-
-[node name="texture" type="Sprite2D" parent="."]
-visibility_layer = 2
-position = Vector2(8, -8)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_6t6ic")
-hframes = 5
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

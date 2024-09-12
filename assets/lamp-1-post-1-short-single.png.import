@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1dcrarfkflno"
-path="res://.godot/imported/ant.png-058c0678110cb7f5d6070e7eea8fd4e1.ctex"
+uid="uid://ccnn7irll0toq"
+path="res://.godot/imported/lamp-1-post-1-short-single.png-06a12c79301d2190204dea16a1bb4418.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/enemies/ant.png"
-dest_files=["res://.godot/imported/ant.png-058c0678110cb7f5d6070e7eea8fd4e1.ctex"]
+source_file="res://assets/lamp-1-post-1-short-single.png"
+dest_files=["res://.godot/imported/lamp-1-post-1-short-single.png-06a12c79301d2190204dea16a1bb4418.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bem2gujxlwusd"
-path="res://.godot/imported/Hurt (16 x 16).png-710793fb3b3fc51f6b8b3860352daac8.ctex"
+uid="uid://4k8yfryrykcb"
+path="res://.godot/imported/Rock_shape (16 x 16).png-8bc010c4e82b05525afbdf5378c6f0bd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/enemies/Hurt (16 x 16).png"
-dest_files=["res://.godot/imported/Hurt (16 x 16).png-710793fb3b3fc51f6b8b3860352daac8.ctex"]
+source_file="res://assets/Rock_shape (16 x 16).png"
+dest_files=["res://.godot/imported/Rock_shape (16 x 16).png-8bc010c4e82b05525afbdf5378c6f0bd.ctex"]
 
 [params]
 
