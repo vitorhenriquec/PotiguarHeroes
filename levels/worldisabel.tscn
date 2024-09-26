@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b6j5dcu2uaujw" path="res://assets/House (112 x 96).png" id="2_tjtc1"]
 [ext_resource type="Texture2D" uid="uid://4k8yfryrykcb" path="res://assets/Rock_shape (16 x 16).png" id="3_qeiox"]
 [ext_resource type="Texture2D" uid="uid://ccnn7irll0toq" path="res://assets/lamp-1-post-1-short-single.png" id="4_8pot8"]
-[ext_resource type="Texture2D" uid="uid://dwmyofi5xbbmy" path="res://assets/sprite/cactus.png" id="6_pfn1w"]
+[ext_resource type="Texture2D" uid="uid://dwmyofi5xbbmy" path="res://assets/tilesets/3 - Tropics/cactus.png" id="6_pfn1w"]
 [ext_resource type="Texture2D" uid="uid://q1dnhos5lvm8" path="res://assets/tilesets/3 - Tropics/Background parts/5 - Sky_color.png" id="6_s5fit"]
 [ext_resource type="Texture2D" uid="uid://dt1oloqwucpla" path="res://assets/tilesets/3 - Tropics/Background parts/4 - Background_clouds.png" id="7_l32jk"]
 [ext_resource type="Shader" path="res://shaders/movement_clouds.gdshader" id="8_3ylaj"]
