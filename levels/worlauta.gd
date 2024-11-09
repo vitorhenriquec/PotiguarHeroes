@@ -3,6 +3,7 @@ extends Node2D
 @onready var player := $player as CharacterBody2D
 @onready var camera := $camera as Camera2D
 var actual_score = 0
+@onready var mainMenuLevel = preload("res://mainmenu/main_menu.tscn") as PackedScene
 
 var score_messages = {
 	0:  "",
@@ -33,8 +34,19 @@ func _process(delta):
 	if PlayerState.get_score() != actual_score and $player != null:
 		$hud/control/message_container/score_message.text = score_messages[PlayerState.get_score()]
 		actual_score = PlayerState.get_score()
-		await get_tree().create_timer(3).timeout
+		await get_tree().create_timer(5).timeout
 		$hud/control/message_container/score_message.text = ""
 		
 	if PlayerState.get_score() == 0:
 		actual_score = 0
+
+
+func _on_flag_body_entered(body):
+	var can_proceed = PlayerState.get_score() == 10
+	
+	if body.name == "player" and can_proceed:
+		get_tree().change_scene_to_packed(mainMenuLevel)
+	elif body.name == "player" and not can_proceed:
+		$hud/control/message_container/score_message.text = "Colete todos os items!"
+		await get_tree().create_timer(3).timeout
+		$hud/control/message_container/score_message.text = "" # Replace with function body

@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://c5u37mwb11eig"]
+[gd_scene load_steps=30 format=3 uid="uid://c5u37mwb11eig"]
 
 [ext_resource type="Texture2D" uid="uid://2hay385sjyn3" path="res://assets/tilesets/3 - Tropics/Terrain (16 x 16).png" id="1_ebgey"]
 [ext_resource type="Script" path="res://levels/worlauta.gd" id="1_i1vcl"]
@@ -18,6 +18,9 @@
 [ext_resource type="Texture2D" uid="uid://dnh2p7g602ck1" path="res://assets/tilesets/3 - Tropics/Background parts/2 - Waters_version_2.png" id="14_owl0p"]
 [ext_resource type="Texture2D" uid="uid://7ufc17x41364" path="res://assets/tilesets/3 - Tropics/Background parts/1 - Waters_version_1.png" id="15_yahmv"]
 [ext_resource type="PackedScene" uid="uid://c8l0tt57wol88" path="res://enemies/rose.tscn" id="18_f5e6t"]
+[ext_resource type="PackedScene" uid="uid://t3553h8ycrfq" path="res://prefabs/pen.tscn" id="19_q6h5n"]
+[ext_resource type="Texture2D" uid="uid://bexhd360rytee" path="res://assets/collectable/Flag1.png" id="20_wbbep"]
+[ext_resource type="Texture2D" uid="uid://ye8sqv0q4qbh" path="res://assets/collectable/Flag2.png" id="21_yfnra"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cvebi"]
 texture = ExtResource("1_ebgey")
@@ -251,6 +254,31 @@ sources/1 = SubResource("TileSetAtlasSource_nhqlg")
 shader = ExtResource("12_cj74j")
 shader_parameter/move_speed = 0.05
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_37jj7"]
+size = Vector2(78, 118)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2mx5b"]
+atlas = ExtResource("20_wbbep")
+region = Rect2(0, 0, 80, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5nboy"]
+atlas = ExtResource("21_yfnra")
+region = Rect2(0, 0, 80, 124)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6v5l4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2mx5b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5nboy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="WorlAuta" type="Node2D"]
 script = ExtResource("1_i1vcl")
 
@@ -341,7 +369,7 @@ action = "ui_right"
 visibility_mode = 1
 
 [node name="ui_up" type="TouchScreenButton" parent="controler"]
-position = Vector2(284, 144)
+position = Vector2(266, 143)
 texture_normal = ExtResource("7_x7qcs")
 texture_pressed = ExtResource("8_8agag")
 action = "ui_accept"
@@ -403,7 +431,7 @@ size_flags_horizontal = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("9_w0boy")
+theme_override_constants/shadow_outline_size = 5
 theme_override_font_sizes/font_size = 12
 horizontal_alignment = 3
 vertical_alignment = 3
@@ -417,7 +445,7 @@ offset_bottom = 47.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 10
+theme_override_font_sizes/font_size = 12
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -452,3 +480,50 @@ position = Vector2(1850, 358)
 
 [node name="rose10" parent="enemies" instance=ExtResource("18_f5e6t")]
 position = Vector2(2003, 358)
+
+[node name="collectables" type="Node2D" parent="."]
+
+[node name="pen" parent="collectables" instance=ExtResource("19_q6h5n")]
+position = Vector2(247, 329)
+
+[node name="pen2" parent="collectables" instance=ExtResource("19_q6h5n")]
+position = Vector2(344, 340)
+
+[node name="pen3" parent="collectables" instance=ExtResource("19_q6h5n")]
+position = Vector2(486, 337)
+
+[node name="pen4" parent="collectables" instance=ExtResource("19_q6h5n")]
+position = Vector2(660, 329)
+
+[node name="pen5" parent="collectables" instance=ExtResource("19_q6h5n")]
+position = Vector2(862, 351)
+
+[node name="pen6" parent="collectables" instance=ExtResource("19_q6h5n")]
+position = Vector2(637, 359)
+
+[node name="pen7" parent="collectables" instance=ExtResource("19_q6h5n")]
+position = Vector2(1126, 359)
+
+[node name="pen8" parent="collectables" instance=ExtResource("19_q6h5n")]
+position = Vector2(1301, 358)
+
+[node name="pen9" parent="collectables" instance=ExtResource("19_q6h5n")]
+position = Vector2(1690, 339)
+
+[node name="pen10" parent="collectables" instance=ExtResource("19_q6h5n")]
+position = Vector2(2006, 332)
+
+[node name="flag" type="Area2D" parent="collectables"]
+position = Vector2(2146, 343)
+scale = Vector2(0.4, 0.4)
+collision_mask = 3
+
+[node name="colision" type="CollisionShape2D" parent="collectables/flag"]
+position = Vector2(-1, -3)
+shape = SubResource("RectangleShape2D_37jj7")
+
+[node name="anim" type="AnimatedSprite2D" parent="collectables/flag"]
+sprite_frames = SubResource("SpriteFrames_6v5l4")
+autoplay = "default"
+
+[connection signal="body_entered" from="collectables/flag" to="." method="_on_flag_body_entered"]
