@@ -252,7 +252,7 @@ action = "ui_right"
 visibility_mode = 1
 
 [node name="ui_up" type="TouchScreenButton" parent="controler"]
-position = Vector2(266, 143)
+position = Vector2(280, 142)
 texture_normal = ExtResource("7_x7qcs")
 texture_pressed = ExtResource("8_8agag")
 action = "ui_accept"
@@ -358,9 +358,9 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -40.0
+offset_left = -41.0
 offset_top = -2.0
-offset_right = -4.0
+offset_right = -5.0
 offset_bottom = 33.0
 grow_horizontal = 0
 theme_override_constants/margin_left = 8

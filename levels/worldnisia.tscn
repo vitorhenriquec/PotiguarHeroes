@@ -495,7 +495,7 @@ action = "ui_right"
 visibility_mode = 1
 
 [node name="ui_up" type="TouchScreenButton" parent="controler"]
-position = Vector2(264, 143)
+position = Vector2(277, 143)
 texture_normal = ExtResource("20_ge2x2")
 texture_pressed = ExtResource("21_eg1r4")
 action = "ui_accept"
