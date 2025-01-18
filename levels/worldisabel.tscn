@@ -455,6 +455,48 @@ theme_override_fonts/font = ExtResource("18_ykd00")
 theme_override_font_sizes/font_size = 15
 text = "00"
 
+[node name="container2" type="MarginContainer" parent="hud/control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -68.0
+offset_top = -2.0
+offset_right = -32.0
+offset_bottom = 33.0
+grow_horizontal = 0
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="decrease_font_size" type="Button" parent="hud/control/container2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("18_ykd00")
+theme_override_font_sizes/font_size = 10
+text = "A-"
+
+[node name="container3" type="MarginContainer" parent="hud/control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_top = -2.0
+offset_right = -4.0
+offset_bottom = 33.0
+grow_horizontal = 0
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="increase_font_size" type="Button" parent="hud/control/container3"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("18_ykd00")
+theme_override_font_sizes/font_size = 10
+text = "A+"
+
 [node name="message_container" type="HBoxContainer" parent="hud/control"]
 layout_mode = 1
 anchors_preset = 8
@@ -639,4 +681,6 @@ position = Vector2(2480, 176)
 [node name="diary10" parent="collectable" instance=ExtResource("23_in3rs")]
 position = Vector2(2845, 177)
 
+[connection signal="pressed" from="hud/control/container2/decrease_font_size" to="." method="_on_decrease_font_size_pressed"]
+[connection signal="pressed" from="hud/control/container3/increase_font_size" to="." method="_on_increase_font_size_pressed"]
 [connection signal="body_entered" from="flag" to="." method="_on_flag_body_entered"]
