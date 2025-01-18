@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b6j5dcu2uaujw" path="res://assets/House (112 x 96).png" id="2_tjtc1"]
 [ext_resource type="Texture2D" uid="uid://4k8yfryrykcb" path="res://assets/Rock_shape (16 x 16).png" id="3_qeiox"]
 [ext_resource type="Texture2D" uid="uid://ccnn7irll0toq" path="res://assets/lamp-1-post-1-short-single.png" id="4_8pot8"]
-[ext_resource type="Texture2D" uid="uid://dwmyofi5xbbmy" path="res://assets/sprite/cactus.png" id="6_pfn1w"]
+[ext_resource type="Texture2D" uid="uid://dwmyofi5xbbmy" path="res://assets/tilesets/3 - Tropics/cactus.png" id="6_pfn1w"]
 [ext_resource type="Texture2D" uid="uid://q1dnhos5lvm8" path="res://assets/tilesets/3 - Tropics/Background parts/5 - Sky_color.png" id="6_s5fit"]
 [ext_resource type="Texture2D" uid="uid://dt1oloqwucpla" path="res://assets/tilesets/3 - Tropics/Background parts/4 - Background_clouds.png" id="7_l32jk"]
 [ext_resource type="Shader" path="res://shaders/movement_clouds.gdshader" id="8_3ylaj"]
@@ -769,7 +769,7 @@ action = "ui_right"
 visibility_mode = 1
 
 [node name="ui_up" type="TouchScreenButton" parent="controler"]
-position = Vector2(284, 144)
+position = Vector2(263, 144)
 texture_normal = ExtResource("16_bsfsx")
 texture_pressed = ExtResource("17_tprnb")
 action = "ui_accept"
@@ -831,7 +831,7 @@ size_flags_horizontal = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("18_ykd00")
+theme_override_constants/shadow_outline_size = 5
 theme_override_font_sizes/font_size = 12
 horizontal_alignment = 3
 vertical_alignment = 3
@@ -994,3 +994,5 @@ position = Vector2(2480, 176)
 
 [node name="diary10" parent="collectable" instance=ExtResource("23_in3rs")]
 position = Vector2(2845, 177)
+
+[connection signal="body_entered" from="flag" to="." method="_on_flag_body_entered"]

@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://c8l0tt57wol88"]
+
+[ext_resource type="Script" path="res://scripts/fly.gd" id="1_lt37h"]
+[ext_resource type="Texture2D" uid="uid://bxbk88fx0t85p" path="res://assets/enemies/rose.png" id="2_3ec4n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8trgn"]
+atlas = ExtResource("2_3ec4n")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q1dft"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8trgn")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pbbvd"]
+size = Vector2(16.3507, 6.09168)
+
+[node name="fly" type="Area2D" groups=["enemies"]]
+position = Vector2(0, -10)
+scale = Vector2(1.00803, 1)
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_lt37h")
+
+[node name="texture" type="AnimatedSprite2D" parent="."]
+visibility_layer = 2
+position = Vector2(2.47425, -0.999999)
+scale = Vector2(0.527383, 0.6875)
+sprite_frames = SubResource("SpriteFrames_q1dft")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.840828
+
+[node name="collision" type="CollisionShape2D" parent="."]
+light_mask = 4
+visibility_layer = 33
+position = Vector2(2.48007, -1)
+rotation = 1.5708
+scale = Vector2(1.34551, 2.11705)
+shape = SubResource("RectangleShape2D_pbbvd")
+one_way_collision_margin = 0.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
