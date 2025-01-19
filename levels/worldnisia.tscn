@@ -480,22 +480,32 @@ editor_draw_limits = true
 
 [node name="controler" type="CanvasLayer" parent="."]
 
-[node name="ui_left" type="TouchScreenButton" parent="controler"]
-position = Vector2(9, 144)
+[node name="control" type="Control" parent="controler"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="ui_left" type="TouchScreenButton" parent="controler/control"]
+position = Vector2(7, 144)
 texture_normal = ExtResource("16_3gky0")
 texture_pressed = ExtResource("17_rvuf2")
 action = "ui_left"
 visibility_mode = 1
 
-[node name="ui_right" type="TouchScreenButton" parent="controler"]
-position = Vector2(47, 144)
+[node name="ui_right" type="TouchScreenButton" parent="controler/control"]
+position = Vector2(45, 144)
 texture_normal = ExtResource("18_6or4e")
 texture_pressed = ExtResource("19_evxy5")
 action = "ui_right"
 visibility_mode = 1
 
-[node name="ui_up" type="TouchScreenButton" parent="controler"]
-position = Vector2(277, 143)
+[node name="ui_up" type="TouchScreenButton" parent="controler/control"]
+position = Vector2(278, 143)
 texture_normal = ExtResource("20_ge2x2")
 texture_pressed = ExtResource("21_eg1r4")
 action = "ui_accept"
