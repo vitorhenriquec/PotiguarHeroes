@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://c8l0tt57wol88"]
 
-[ext_resource type="Script" path="res://scripts/fly.gd" id="1_lt37h"]
+[ext_resource type="Script" uid="uid://d2bqs63yqe2kb" path="res://scripts/fly.gd" id="1_lt37h"]
 [ext_resource type="Texture2D" uid="uid://bxbk88fx0t85p" path="res://assets/enemies/rose.png" id="2_3ec4n"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8trgn"]

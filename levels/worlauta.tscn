@@ -1,7 +1,7 @@
 [gd_scene load_steps=30 format=3 uid="uid://c5u37mwb11eig"]
 
 [ext_resource type="Texture2D" uid="uid://2hay385sjyn3" path="res://assets/tilesets/3 - Tropics/Terrain (16 x 16).png" id="1_ebgey"]
-[ext_resource type="Script" path="res://levels/worlauta.gd" id="1_i1vcl"]
+[ext_resource type="Script" uid="uid://cdlks73mv20js" path="res://levels/worlauta.gd" id="1_i1vcl"]
 [ext_resource type="PackedScene" uid="uid://cjhnl52hvg82n" path="res://actors/auta.tscn" id="2_pihcg"]
 [ext_resource type="Texture2D" uid="uid://b3eonn3ds5dbf" path="res://assets/ui/ui_buttons_arrow_left_NORMAL.png" id="3_5phwb"]
 [ext_resource type="Texture2D" uid="uid://dwmyofi5xbbmy" path="res://assets/tilesets/3 - Tropics/cactus.png" id="3_ea5cg"]
@@ -13,7 +13,7 @@
 [ext_resource type="FontFile" uid="uid://bv8k3ovc12l53" path="res://assets/ui/RevMiniPixel.ttf" id="9_w0boy"]
 [ext_resource type="Texture2D" uid="uid://q1dnhos5lvm8" path="res://assets/tilesets/3 - Tropics/Background parts/5 - Sky_color.png" id="10_iqt30"]
 [ext_resource type="Texture2D" uid="uid://dt1oloqwucpla" path="res://assets/tilesets/3 - Tropics/Background parts/4 - Background_clouds.png" id="11_uegsq"]
-[ext_resource type="Shader" path="res://shaders/movement_clouds.gdshader" id="12_cj74j"]
+[ext_resource type="Shader" uid="uid://tmsndagxnhr2" path="res://shaders/movement_clouds.gdshader" id="12_cj74j"]
 [ext_resource type="Texture2D" uid="uid://dha0fbnnmlpw0" path="res://assets/tilesets/3 - Tropics/Background parts/3 - Floating_clouds.png" id="13_okw0n"]
 [ext_resource type="Texture2D" uid="uid://dnh2p7g602ck1" path="res://assets/tilesets/3 - Tropics/Background parts/2 - Waters_version_2.png" id="14_owl0p"]
 [ext_resource type="Texture2D" uid="uid://7ufc17x41364" path="res://assets/tilesets/3 - Tropics/Background parts/1 - Waters_version_1.png" id="15_yahmv"]

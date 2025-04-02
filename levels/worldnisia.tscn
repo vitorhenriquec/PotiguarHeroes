@@ -1,7 +1,7 @@
 [gd_scene load_steps=37 format=3 uid="uid://5mn5b8v85syw"]
 
 [ext_resource type="Texture2D" uid="uid://cfbe4idnrs780" path="res://assets/tilesets/2 - Autumn Forest/Terrain (16 x 16).png" id="1_ac1ub"]
-[ext_resource type="Script" path="res://levels/worldnisia.gd" id="1_dk7b3"]
+[ext_resource type="Script" uid="uid://dkr2dmpr10ui3" path="res://levels/worldnisia.gd" id="1_dk7b3"]
 [ext_resource type="Texture2D" uid="uid://2hay385sjyn3" path="res://assets/tilesets/3 - Tropics/Terrain (16 x 16).png" id="1_tcidt"]
 [ext_resource type="Texture2D" uid="uid://bexhd360rytee" path="res://assets/collectable/Flag1.png" id="2_36rvn"]
 [ext_resource type="Texture2D" uid="uid://dwmyofi5xbbmy" path="res://assets/tilesets/3 - Tropics/cactus.png" id="3_34wil"]
@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://jsdkdd127vly" path="res://actors/nisia.tscn" id="6_yckyq"]
 [ext_resource type="Texture2D" uid="uid://q1dnhos5lvm8" path="res://assets/tilesets/3 - Tropics/Background parts/5 - Sky_color.png" id="7_xn1i5"]
 [ext_resource type="Texture2D" uid="uid://dt1oloqwucpla" path="res://assets/tilesets/3 - Tropics/Background parts/4 - Background_clouds.png" id="8_op4xe"]
-[ext_resource type="Shader" path="res://shaders/movement_clouds.gdshader" id="9_38k24"]
+[ext_resource type="Shader" uid="uid://tmsndagxnhr2" path="res://shaders/movement_clouds.gdshader" id="9_38k24"]
 [ext_resource type="Texture2D" uid="uid://dha0fbnnmlpw0" path="res://assets/tilesets/3 - Tropics/Background parts/3 - Floating_clouds.png" id="9_buted"]
 [ext_resource type="Texture2D" uid="uid://dnh2p7g602ck1" path="res://assets/tilesets/3 - Tropics/Background parts/2 - Waters_version_2.png" id="10_i7su2"]
 [ext_resource type="Texture2D" uid="uid://7ufc17x41364" path="res://assets/tilesets/3 - Tropics/Background parts/1 - Waters_version_1.png" id="11_yv6f5"]

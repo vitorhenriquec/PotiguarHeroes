@@ -12,6 +12,7 @@ config_version=5
 
 config/name="PotiguarHeroes"
 run/main_scene="res://mainmenu/main_menu.tscn"
+
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://icon.svg"
 

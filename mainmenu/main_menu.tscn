@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://blhtxngvjvoo"]
 
-[ext_resource type="Script" path="res://mainmenu/main_menu.gd" id="1_mvcc0"]
+[ext_resource type="Script" uid="uid://csq5sah345dri" path="res://mainmenu/main_menu.gd" id="1_mvcc0"]
 [ext_resource type="Texture2D" uid="uid://bvm48efangwju" path="res://assets/bg/Pink.png" id="1_na3d1"]
 [ext_resource type="FontFile" uid="uid://bv8k3ovc12l53" path="res://assets/ui/RevMiniPixel.ttf" id="2_n2n8q"]
 

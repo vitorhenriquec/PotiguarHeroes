@@ -6,7 +6,7 @@ var actual_score = 0
 @onready var mainMenuLevel = preload("res://mainmenu/main_menu.tscn") as PackedScene
 
 var score_messages = {
-	0:  "",
+	0:  "Fuja da formigas perigosas!",
 	1:  "Fundou uma escola na Ribeira, em Natal",
 	2:  "Foi educadora, historiadora e poetisa,\n destacando-se por seu papel \npioneiro na educação",
 	3:  "Isabel começou a ensinar aos 27 anos",
@@ -24,6 +24,13 @@ func _ready():
 	PlayerState.set_score(0)
 	PlayerState.set_initial_position($player.position)
 	player.follow_camera(camera)
+	
+	$hud/control/message_container/score_message.text = score_messages[0]
+	get_tree().paused = true
+	await get_tree().create_timer(2).timeout
+	get_tree().paused = false
+	$hud/control/message_container/score_message.text = ""
+	
 	pass # Replace with function body.
 
 
