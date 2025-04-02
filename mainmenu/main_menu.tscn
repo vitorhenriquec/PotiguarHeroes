@@ -69,14 +69,17 @@ layout_mode = 2
 [node name="Auta" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(200, 20)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_n2n8q")
 text = "Auta"
 
 [node name="Isabel" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_n2n8q")
 text = "Isabel
 "
 
 [node name="Nisia" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_n2n8q")
 text = "Nisia
 "
