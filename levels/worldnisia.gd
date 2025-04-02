@@ -14,7 +14,7 @@ var score_messages = {
 	4:  "Fluente em várias línguas, incluindo português, francês, italiano e inglês",
 	5:  "Escreveu diversas obras ao longo de sua vida,\nabordando temas como a educação,\na condição da mulher e questões sociais",
 	6:  "Também foi uma ferrenha defensora dos direitos dos indígenas e dos escravos",
-	7:  "Introduziu métodos pedagógicos inovadores para a época, promovendo uma educação que valorizava o desenvolvimento crítico e intelectual das meninas",
+	7:  "Introduziu métodos pedagógicos inovadores para a época,\n promovendo uma educação que valorizava o desenvolvimento crítico e intelectual das meninas",
 	8:  "Tem um município com seu pseudônimo",
 	9:  "Na Europa, se relacionou com importantes intelectuais e movimentos sociais da época",
 	10:  "Seus livros mais conhecidos são Conselhos à Minha Filha e Opúsculo Humanitário"
