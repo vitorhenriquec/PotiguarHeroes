@@ -12,7 +12,8 @@ config_version=5
 
 config/name="PotiguarHeroes"
 run/main_scene="res://mainmenu/main_menu.tscn"
-config/features=PackedStringArray("4.4", "Mobile")
+
+config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://icon.svg"
 
 [autoload]
@@ -21,13 +22,13 @@ PlayerState="*res://scripts/state.gd"
 
 [display]
 
-window/size/viewport_width=1080
-window/size/viewport_height=720
+window/size/viewport_width=640
+window/size/viewport_height=360
+window/size/resizable=false
 window/size/window_width_override=640
 window/size/window_height_override=380
 window/stretch/mode="viewport"
-window/stretch/aspect="expand"
-window/stretch/scale=4.0
+window/stretch/scale=2.0
 window/vsync/vsync_mode=0
 
 [input]
@@ -65,3 +66,4 @@ pointing/emulate_touch_from_mouse=true
 
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true
