@@ -33,4 +33,3 @@ func set_score(score):
 	
 func set_collectable(collectable):
 	self.collectable = collectable
-

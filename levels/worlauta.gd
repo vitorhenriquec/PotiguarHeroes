@@ -50,3 +50,11 @@ func _on_flag_body_entered(body):
 		$hud/control/message_container/score_message.text = "Colete todos os items!"
 		await get_tree().create_timer(3).timeout
 		$hud/control/message_container/score_message.text = "" # Replace with function body
+
+
+func _on_decrease_font_size_pressed() -> void:
+	$hud/control/message_container/score_message.add_theme_font_size_override("font_size", 10)
+
+
+func _on_increase_font_size_pressed() -> void:
+	$hud/control/message_container/score_message.add_theme_font_size_override("font_size", 14)
