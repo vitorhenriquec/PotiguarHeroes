@@ -7,7 +7,7 @@ var actual_score = 0
 @onready var mainMenuLevel = preload("res://mainmenu/main_menu.tscn") as PackedScene
 
 var score_messages = {
-	0:  "",
+	0:  "Fuja das moscas!",
 	1:  "Seu nome era Dionísia Gonçalves Pinto,\nmas adotou Nísia Floresta Brasileira Augusta\npara evitar represálias",
 	2:  "Foi uma das primeiras vozes a defender\nos direitos das mulheres no Brasil",
 	3:  "Fundou a primeira escola para meninas no Brasil",
@@ -25,6 +25,13 @@ func _ready():
 	PlayerState.set_score(0)
 	PlayerState.set_initial_position($player.position)
 	player.follow_camera(camera)
+	
+	$hud/control/message_container/score_message.text = score_messages[0]
+	get_tree().paused = true
+	await get_tree().create_timer(2).timeout
+	get_tree().paused = false
+	$hud/control/message_container/score_message.text = ""
+	
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

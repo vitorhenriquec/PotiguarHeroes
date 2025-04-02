@@ -6,24 +6,31 @@ var actual_score = 0
 @onready var mainMenuLevel = preload("res://mainmenu/main_menu.tscn") as PackedScene
 
 var score_messages = {
-	0:  "",
-	1:  "Fundou uma escola na Ribeira, em Natal",
-	2:  "Foi educadora, historiadora e poetisa,\n destacando-se por seu papel \npioneiro na educação",
-	3:  "Isabel começou a ensinar aos 27 anos",
-	4:  "Defendeu fervorosamente \no ensino público para mulheres",
-	5:  "Promoveu uma revolução no \nmagistério em Natal,\nelevando o status da \nprofissão docente.",
-	6:  "Também se expressou \natravés da poesia,\n deixando um legado literário",
-	7:  "Documentou e valorizou \na cultura local e\nas memórias de sua época",
-	8:  "Ensinava com atividades \nlúdicas e estímulava\na criatividade",
-	9:  "Lutou para que as \nmulheres tivessem as\nmesmas oportunidades\n educacionais que os homens",
-	10:  "Se envolvia ativamente\nna gestão escolar,\ngarantindo que sua\n escola fosse um\n ambiente acolhedor e produtivo"
+	0:  "Fuja das rosas espinhosas!",
+	1:  "Aprendeu a ler e escrever sozinha,\n ainda criança",
+	2:  "Sua obra é marcada por forte espiritualidade\n e influência religiosa",
+	3:  "Viveu apenas 24 anos (1876–1901),\n vítima de tuberculose.",
+	4:  "Publicou apenas Horto (1900),\n repleto de lirismo e melancolia",
+	5:  "Seu irmão, o escritor Henrique de Souza,\n organizou sua obra póstuma.",
+	6:  "Nascida no RN, retratou a natureza e\n a cultura do sertão em seus versos.",
+	7:  "Carlos Drummond de Souza destacou sua sensibilidade poética.",
+	8:  "Escreveu mesmo enfrentando\nlimitações físicas devido à saúde frágil.",
+	9:  "Usava versos acessíveis,\n mas profundamente emotivos.",
+	10:  "Considerada uma das vozes mais delicadas\n da poesia brasileira do século XIX"
 }
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
 	PlayerState.set_score(0)
 	PlayerState.set_initial_position($player.position)
 	player.follow_camera(camera)
+	
+	$hud/control/message_container/score_message.text = score_messages[0]
+	get_tree().paused = true
+	await get_tree().create_timer(2).timeout
+	get_tree().paused = false
+	$hud/control/message_container/score_message.text = ""
 	pass # Replace with function body.
 
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://2yefc5e3t6y7"]
 
-[ext_resource type="Script" path="res://scripts/fly.gd" id="1_b14re"]
+[ext_resource type="Script" uid="uid://d2bqs63yqe2kb" path="res://scripts/fly.gd" id="1_b14re"]
 [ext_resource type="Texture2D" uid="uid://bun5ws81puw5h" path="res://assets/enemies/antattack.png" id="2_kwati"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fpcun"]
