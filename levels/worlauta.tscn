@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://c5u37mwb11eig"]
+[gd_scene load_steps=31 format=3 uid="uid://c5u37mwb11eig"]
 
 [ext_resource type="Texture2D" uid="uid://2hay385sjyn3" path="res://assets/tilesets/3 - Tropics/Terrain (16 x 16).png" id="1_ebgey"]
 [ext_resource type="Script" uid="uid://cdlks73mv20js" path="res://levels/worlauta.gd" id="1_i1vcl"]
@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://dnh2p7g602ck1" path="res://assets/tilesets/3 - Tropics/Background parts/2 - Waters_version_2.png" id="14_owl0p"]
 [ext_resource type="Texture2D" uid="uid://7ufc17x41364" path="res://assets/tilesets/3 - Tropics/Background parts/1 - Waters_version_1.png" id="15_yahmv"]
 [ext_resource type="PackedScene" uid="uid://c8l0tt57wol88" path="res://enemies/rose.tscn" id="18_f5e6t"]
+[ext_resource type="Texture2D" uid="uid://bemx1x0gvcuxe" path="res://shaders/contrast-button_icon-icons.com_54028.png" id="18_kjpcv"]
 [ext_resource type="PackedScene" uid="uid://t3553h8ycrfq" path="res://prefabs/pen.tscn" id="19_q6h5n"]
 [ext_resource type="Texture2D" uid="uid://bexhd360rytee" path="res://assets/collectable/Flag1.png" id="20_wbbep"]
 [ext_resource type="Texture2D" uid="uid://ye8sqv0q4qbh" path="res://assets/collectable/Flag2.png" id="21_yfnra"]
@@ -383,6 +384,28 @@ theme_override_fonts/font = ExtResource("9_w0boy")
 theme_override_font_sizes/font_size = 10
 text = "A+"
 
+[node name="container4" type="MarginContainer" parent="hud/control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -90.0
+offset_top = 1.0
+offset_right = -34.0
+offset_bottom = 57.0
+grow_horizontal = 0
+scale = Vector2(0.5, 0.5)
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="high_contrast" type="Button" parent="hud/control/container4"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("9_w0boy")
+theme_override_font_sizes/font_size = 0
+icon = ExtResource("18_kjpcv")
+
 [node name="enemies" type="Node2D" parent="."]
 
 [node name="rose" parent="enemies" instance=ExtResource("18_f5e6t")]
@@ -462,4 +485,5 @@ autoplay = "default"
 
 [connection signal="pressed" from="hud/control/container2/decrease_font_size" to="." method="_on_decrease_font_size_pressed"]
 [connection signal="pressed" from="hud/control/container3/increase_font_size" to="." method="_on_increase_font_size_pressed"]
+[connection signal="pressed" from="hud/control/container4/high_contrast" to="." method="_on_high_contrast_pressed"]
 [connection signal="body_entered" from="collectables/flag" to="." method="_on_flag_body_entered"]

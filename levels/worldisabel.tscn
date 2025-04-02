@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://bfsw3ktucw3ye"]
+[gd_scene load_steps=37 format=3 uid="uid://bfsw3ktucw3ye"]
 
 [ext_resource type="PackedScene" uid="uid://u2b8bjyoi15t" path="res://actors/isabel.tscn" id="1_4wjuq"]
 [ext_resource type="Script" uid="uid://gkktsbj2no5h" path="res://levels/worldisabel.gd" id="1_cjm82"]
@@ -22,6 +22,7 @@
 [ext_resource type="FontFile" uid="uid://bv8k3ovc12l53" path="res://assets/ui/RevMiniPixel.ttf" id="18_ykd00"]
 [ext_resource type="PackedScene" uid="uid://2yefc5e3t6y7" path="res://enemies/ant.tscn" id="19_havin"]
 [ext_resource type="Texture2D" uid="uid://bexhd360rytee" path="res://assets/collectable/Flag1.png" id="21_1mwjk"]
+[ext_resource type="Texture2D" uid="uid://bemx1x0gvcuxe" path="res://shaders/contrast-button_icon-icons.com_54028.png" id="21_4j3oo"]
 [ext_resource type="Texture2D" uid="uid://ye8sqv0q4qbh" path="res://assets/collectable/Flag2.png" id="22_42kq8"]
 [ext_resource type="PackedScene" uid="uid://b4u5o6a0n2ncr" path="res://prefabs/diary.tscn" id="23_in3rs"]
 
@@ -548,6 +549,28 @@ theme_override_font_sizes/font_size = 10
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="container4" type="MarginContainer" parent="hud/control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -90.0
+offset_top = 1.0
+offset_right = -34.0
+offset_bottom = 57.0
+grow_horizontal = 0
+scale = Vector2(0.5, 0.5)
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="high_contrast" type="Button" parent="hud/control/container4"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("18_ykd00")
+theme_override_font_sizes/font_size = 0
+icon = ExtResource("21_4j3oo")
+
 [node name="enemies" type="Node2D" parent="."]
 
 [node name="fly" parent="enemies" instance=ExtResource("19_havin")]
@@ -696,4 +719,5 @@ position = Vector2(2845, 177)
 
 [connection signal="pressed" from="hud/control/container2/decrease_font_size" to="." method="_on_decrease_font_size_pressed"]
 [connection signal="pressed" from="hud/control/container3/increase_font_size" to="." method="_on_increase_font_size_pressed"]
+[connection signal="pressed" from="hud/control/container4/high_contrast" to="." method="_on_high_contrast_pressed"]
 [connection signal="body_entered" from="flag" to="." method="_on_flag_body_entered"]

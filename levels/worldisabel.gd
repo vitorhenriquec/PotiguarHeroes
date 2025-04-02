@@ -19,11 +19,16 @@ var score_messages = {
 	10:  "Se envolvia ativamente\nna gestão escolar,\ngarantindo que sua\n escola fosse um\n ambiente acolhedor e produtivo"
 }
 
+var high_contrast_material: ShaderMaterial
+var is_high_contrast = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	PlayerState.set_score(0)
 	PlayerState.set_initial_position($player.position)
 	player.follow_camera(camera)
+	
+	high_contrast_material = ShaderMaterial.new()
+	high_contrast_material.shader = preload("res://shaders/high_contrast_shader.gdshader")
 	
 	$hud/control/message_container/score_message.text = score_messages[0]
 	get_tree().paused = true
@@ -58,10 +63,33 @@ func _on_flag_body_entered(body):
 		await get_tree().create_timer(3).timeout
 		$hud/control/message_container/score_message.text = "" # Replace with function body.
 
+var actual_font_size = 12
 
 func _on_decrease_font_size_pressed() -> void:
-	$hud/control/message_container/score_message.add_theme_font_size_override("font_size", 10)
+	actual_font_size-=2
+	$hud/control/message_container/score_message.add_theme_font_size_override("font_size", actual_font_size)
 	
 
 func _on_increase_font_size_pressed() -> void:
-	$hud/control/message_container/score_message.add_theme_font_size_override("font_size", 14)
+	actual_font_size+=2
+	$hud/control/message_container/score_message.add_theme_font_size_override("font_size", actual_font_size)
+
+
+func _on_high_contrast_pressed() -> void:
+	is_high_contrast = !is_high_contrast
+	_apply_shader(get_tree().current_scene)
+	
+	
+func _apply_shader(node):
+	for child in node.get_children():
+		if child is Button or child is Label or child.name in ["score_counter", "scoremessage"]:
+			continue
+		
+		if child is CanvasItem:  
+			if child.material == null:
+				child.material = ShaderMaterial.new()
+			child.material.shader = high_contrast_material.shader if is_high_contrast else null
+		elif child is Node3D:  
+			if child is MeshInstance3D and child.get_surface_override_material(0):
+				child.set_surface_override_material(0, high_contrast_material if is_high_contrast else null)
+		_apply_shader(child) 

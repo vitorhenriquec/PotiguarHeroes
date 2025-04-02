@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://5mn5b8v85syw"]
+[gd_scene load_steps=38 format=3 uid="uid://5mn5b8v85syw"]
 
 [ext_resource type="Texture2D" uid="uid://cfbe4idnrs780" path="res://assets/tilesets/2 - Autumn Forest/Terrain (16 x 16).png" id="1_ac1ub"]
 [ext_resource type="Script" uid="uid://dkr2dmpr10ui3" path="res://levels/worldnisia.gd" id="1_dk7b3"]
@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://blrsrdulul7gn" path="res://assets/ui/ui_buttons_arrow_up_NORMAL.png" id="20_ge2x2"]
 [ext_resource type="Texture2D" uid="uid://c3mnh7hwvjr6k" path="res://assets/ui/ui_buttons_arrow_up_PRESSED.png" id="21_eg1r4"]
 [ext_resource type="FontFile" uid="uid://bv8k3ovc12l53" path="res://assets/ui/RevMiniPixel.ttf" id="22_m1nl6"]
+[ext_resource type="Texture2D" uid="uid://bemx1x0gvcuxe" path="res://shaders/contrast-button_icon-icons.com_54028.png" id="25_g82qe"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6vl6w"]
 texture = ExtResource("2_36rvn")
@@ -627,6 +628,28 @@ theme_override_fonts/font = ExtResource("22_m1nl6")
 theme_override_font_sizes/font_size = 10
 text = "A+"
 
+[node name="container4" type="MarginContainer" parent="hud/control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -90.0
+offset_top = 1.0
+offset_right = -34.0
+offset_bottom = 57.0
+grow_horizontal = 0
+scale = Vector2(0.5, 0.5)
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="high_contrast" type="Button" parent="hud/control/container4"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("22_m1nl6")
+theme_override_font_sizes/font_size = 0
+icon = ExtResource("25_g82qe")
+
 [node name="flag" type="Area2D" parent="."]
 position = Vector2(3444, 73)
 scale = Vector2(0.4, 0.4)
@@ -643,4 +666,5 @@ frame_progress = 0.655703
 
 [connection signal="pressed" from="hud/control/container2/decrease_font_size" to="." method="_on_decrease_font_size_pressed"]
 [connection signal="pressed" from="hud/control/container3/increase_font_size" to="." method="_on_increase_font_size_pressed"]
+[connection signal="pressed" from="hud/control/container4/high_contrast" to="." method="_on_high_contrast_pressed"]
 [connection signal="body_entered" from="flag" to="." method="_on_flag_body_entered"]
