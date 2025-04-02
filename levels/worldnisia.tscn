@@ -480,22 +480,32 @@ editor_draw_limits = true
 
 [node name="controler" type="CanvasLayer" parent="."]
 
-[node name="ui_left" type="TouchScreenButton" parent="controler"]
-position = Vector2(9, 144)
+[node name="control" type="Control" parent="controler"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="ui_left" type="TouchScreenButton" parent="controler/control"]
+position = Vector2(7, 144)
 texture_normal = ExtResource("16_3gky0")
 texture_pressed = ExtResource("17_rvuf2")
 action = "ui_left"
 visibility_mode = 1
 
-[node name="ui_right" type="TouchScreenButton" parent="controler"]
-position = Vector2(47, 144)
+[node name="ui_right" type="TouchScreenButton" parent="controler/control"]
+position = Vector2(45, 144)
 texture_normal = ExtResource("18_6or4e")
 texture_pressed = ExtResource("19_evxy5")
 action = "ui_right"
 visibility_mode = 1
 
-[node name="ui_up" type="TouchScreenButton" parent="controler"]
-position = Vector2(264, 143)
+[node name="ui_up" type="TouchScreenButton" parent="controler/control"]
+position = Vector2(278, 143)
 texture_normal = ExtResource("20_ge2x2")
 texture_pressed = ExtResource("21_eg1r4")
 action = "ui_accept"
@@ -575,6 +585,48 @@ theme_override_font_sizes/font_size = 10
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="container2" type="MarginContainer" parent="hud/control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -68.0
+offset_top = -2.0
+offset_right = -32.0
+offset_bottom = 33.0
+grow_horizontal = 0
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="decrease_font_size" type="Button" parent="hud/control/container2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("22_m1nl6")
+theme_override_font_sizes/font_size = 10
+text = "A-"
+
+[node name="container3" type="MarginContainer" parent="hud/control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_top = -2.0
+offset_right = -4.0
+offset_bottom = 33.0
+grow_horizontal = 0
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="increase_font_size" type="Button" parent="hud/control/container3"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("22_m1nl6")
+theme_override_font_sizes/font_size = 10
+text = "A+"
+
 [node name="flag" type="Area2D" parent="."]
 position = Vector2(3444, 73)
 scale = Vector2(0.4, 0.4)
@@ -589,4 +641,6 @@ sprite_frames = SubResource("SpriteFrames_vsyp4")
 autoplay = "default"
 frame_progress = 0.655703
 
+[connection signal="pressed" from="hud/control/container2/decrease_font_size" to="." method="_on_decrease_font_size_pressed"]
+[connection signal="pressed" from="hud/control/container3/increase_font_size" to="." method="_on_increase_font_size_pressed"]
 [connection signal="body_entered" from="flag" to="." method="_on_flag_body_entered"]

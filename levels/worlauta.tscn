@@ -237,22 +237,31 @@ centered = false
 
 [node name="controler" type="CanvasLayer" parent="."]
 
-[node name="ui_left" type="TouchScreenButton" parent="controler"]
-position = Vector2(9, 144)
+[node name="control" type="Control" parent="controler"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ui_left" type="TouchScreenButton" parent="controler/control"]
+position = Vector2(6, 143)
 texture_normal = ExtResource("3_5phwb")
 texture_pressed = ExtResource("4_7ye8o")
 action = "ui_left"
 visibility_mode = 1
 
-[node name="ui_right" type="TouchScreenButton" parent="controler"]
-position = Vector2(47, 144)
+[node name="ui_right" type="TouchScreenButton" parent="controler/control"]
+position = Vector2(44, 143)
 texture_normal = ExtResource("5_elr6x")
 texture_pressed = ExtResource("6_0u5u1")
 action = "ui_right"
 visibility_mode = 1
 
-[node name="ui_up" type="TouchScreenButton" parent="controler"]
-position = Vector2(266, 143)
+[node name="ui_up" type="TouchScreenButton" parent="controler/control"]
+position = Vector2(277, 141)
 texture_normal = ExtResource("7_x7qcs")
 texture_pressed = ExtResource("8_8agag")
 action = "ui_accept"
@@ -332,6 +341,48 @@ theme_override_font_sizes/font_size = 12
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="container2" type="MarginContainer" parent="hud/control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -68.0
+offset_top = -2.0
+offset_right = -32.0
+offset_bottom = 33.0
+grow_horizontal = 0
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="decrease_font_size" type="Button" parent="hud/control/container2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("9_w0boy")
+theme_override_font_sizes/font_size = 10
+text = "A-"
+
+[node name="container3" type="MarginContainer" parent="hud/control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -41.0
+offset_top = -2.0
+offset_right = -5.0
+offset_bottom = 33.0
+grow_horizontal = 0
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="increase_font_size" type="Button" parent="hud/control/container3"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("9_w0boy")
+theme_override_font_sizes/font_size = 10
+text = "A+"
+
 [node name="enemies" type="Node2D" parent="."]
 
 [node name="rose" parent="enemies" instance=ExtResource("18_f5e6t")]
@@ -409,4 +460,6 @@ shape = SubResource("RectangleShape2D_37jj7")
 sprite_frames = SubResource("SpriteFrames_6v5l4")
 autoplay = "default"
 
+[connection signal="pressed" from="hud/control/container2/decrease_font_size" to="." method="_on_decrease_font_size_pressed"]
+[connection signal="pressed" from="hud/control/container3/increase_font_size" to="." method="_on_increase_font_size_pressed"]
 [connection signal="body_entered" from="collectables/flag" to="." method="_on_flag_body_entered"]
